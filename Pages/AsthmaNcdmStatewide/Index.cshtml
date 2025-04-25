@@ -1,0 +1,72 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewide.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].TypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].Mdcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].GroupAgeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].RaceCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsthmaNcdmStatewide[0].GenderCode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AsthmaNcdmStatewide) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mdcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupAgeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderCode)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AsthmaStatewideId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AsthmaStatewideId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AsthmaStatewideId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

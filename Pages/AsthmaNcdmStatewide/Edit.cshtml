@@ -1,0 +1,65 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewide.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AsthmaNcdmStatewide</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AsthmaNcdmStatewide.AsthmaStatewideId" />
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.TypeId" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.TypeId" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.TypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.Mdcode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.Mdcode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.Mdcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.Year" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.Year" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.Rate" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.Rate" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.GroupAgeId" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.GroupAgeId" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.GroupAgeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.RaceCode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.RaceCode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.RaceCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewide.GenderCode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewide.GenderCode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewide.GenderCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
