@@ -1,0 +1,64 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewideSSISTest.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AsthmaNcdmStatewideSSISTest</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.TypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.TypeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Mdcode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Mdcode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Rate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Rate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.GroupAgeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.GroupAgeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.RaceCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.RaceCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.GenderCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.GenderCode)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="AsthmaNcdmStatewideSSISTest.AsthmaStatewideId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

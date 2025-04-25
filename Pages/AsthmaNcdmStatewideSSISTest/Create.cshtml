@@ -1,0 +1,64 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewideSSISTest.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AsthmaNcdmStatewideSSISTest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.TypeId" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.TypeId" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.TypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.Mdcode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.Mdcode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.Mdcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.Year" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.Year" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.Rate" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.Rate" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.GroupAgeId" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.GroupAgeId" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.GroupAgeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.RaceCode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.RaceCode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.RaceCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsthmaNcdmStatewideSSISTest.GenderCode" class="control-label"></label>
+                <input asp-for="AsthmaNcdmStatewideSSISTest.GenderCode" class="form-control" />
+                <span asp-validation-for="AsthmaNcdmStatewideSSISTest.GenderCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

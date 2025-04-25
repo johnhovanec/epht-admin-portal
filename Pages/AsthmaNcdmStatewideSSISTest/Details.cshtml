@@ -1,0 +1,61 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewideSSISTest.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AsthmaNcdmStatewideSSISTest</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.TypeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.TypeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Mdcode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Mdcode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.Rate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.Rate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.GroupAgeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.GroupAgeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.RaceCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.RaceCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AsthmaNcdmStatewideSSISTest.GenderCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AsthmaNcdmStatewideSSISTest.GenderCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.AsthmaNcdmStatewideSSISTest.AsthmaStatewideId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

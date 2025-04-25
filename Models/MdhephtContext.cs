@@ -21,6 +21,8 @@ public partial class MdhephtContext : DbContext
 
     public virtual DbSet<AsthmaNcdmStatewide> AsthmaNcdmStatewides { get; set; }
 
+    public virtual DbSet<AsthmaNcdmStatewideSSISTest> AsthmaNcdmStatewideSSISTests { get; set; }
+
     public virtual DbSet<AsthmaSihisCounty> AsthmaSihisCounties { get; set; }
 
     public virtual DbSet<AsthmaSihisStatewide> AsthmaSihisStatewides { get; set; }
@@ -75,6 +77,27 @@ public partial class MdhephtContext : DbContext
             entity.HasKey(e => e.AsthmaStatewideId).HasName("PK__Asthma_N__0D716E655ECBF82B");
 
             entity.ToTable("Asthma_NCDM_Statewide");
+
+            entity.HasIndex(e => new { e.TypeId, e.GroupAgeId, e.Year, e.Mdcode, e.RaceCode, e.GenderCode }, "NonClusteredIndex-NCDM");
+
+            entity.HasIndex(e => new { e.TypeId, e.Year, e.RaceCode, e.GenderCode }, "NonClusteredIndex-Trendline");
+
+            entity.Property(e => e.AsthmaStatewideId).HasColumnName("Asthma_Statewide_ID");
+            entity.Property(e => e.GenderCode).HasMaxLength(2);
+            entity.Property(e => e.GroupAgeId).HasColumnName("GroupAge_ID");
+            entity.Property(e => e.Mdcode)
+                .HasMaxLength(3)
+                .HasColumnName("MDCode");
+            entity.Property(e => e.RaceCode).HasMaxLength(2);
+            entity.Property(e => e.Rate).HasColumnType("decimal(18, 1)");
+            entity.Property(e => e.TypeId).HasColumnName("Type_ID");
+        });
+
+        modelBuilder.Entity<AsthmaNcdmStatewideSSISTest>(entity =>
+        {
+            entity.HasKey(e => e.AsthmaStatewideId).HasName("PK__Asthma_N__0D716E655ECBF82B");
+
+            entity.ToTable("Asthma_NCDM_Statewide_SSIS_Test");
 
             entity.HasIndex(e => new { e.TypeId, e.GroupAgeId, e.Year, e.Mdcode, e.RaceCode, e.GenderCode }, "NonClusteredIndex-NCDM");
 
