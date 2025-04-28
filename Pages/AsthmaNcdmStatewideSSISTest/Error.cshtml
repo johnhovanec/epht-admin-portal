@@ -1,0 +1,12 @@
+﻿@page
+@model epht_admin_portal.Pages.AsthmaNcdmStatewideSSISTest.ErrorModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1>Error</h1>
+<p> 
+    <h2 class="text-danger">@Model.ErrorMessage</h2>
+</p>
+<a asp-page="UploadExcel">Back to Upload</a>

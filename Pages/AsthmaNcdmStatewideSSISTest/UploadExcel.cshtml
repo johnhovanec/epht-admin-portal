@@ -1,0 +1,15 @@
+﻿@page
+@model UploadExcelModel
+@{
+    ViewData["Title"] = "Upload Excel";
+}
+
+<h1>Upload Excel File</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Upload Excel file (.xlsx)</label>
+        <input type="file" asp-for="Upload" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Upload and Import</button>
+</form>

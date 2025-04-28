@@ -31,9 +31,21 @@ public partial class MdhephtContext : DbContext
 
     public virtual DbSet<ConfigTopic> ConfigTopics { get; set; }
 
+   public virtual DbSet<TableType> TableTypes { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("epht");
+
+        modelBuilder.Entity<TableType>(entity =>
+        {
+            entity.HasKey(e => e.Type_ID);
+
+            entity.ToTable("TableTypes");
+
+            entity.Property(e => e.Type_Name).HasColumnName("Type_Name").HasMaxLength(200);
+            entity.Property(e => e.Type_Description).HasColumnName("Type_Description").HasMaxLength(255);
+        });
 
         modelBuilder.Entity<AsthmaNcdmCensusTract>(entity =>
         {
@@ -210,6 +222,5 @@ public partial class MdhephtContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
-
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
