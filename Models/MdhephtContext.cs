@@ -175,7 +175,7 @@ public partial class MdhephtContext : DbContext
         {
             entity.HasKey(e => e.TopicId).HasName("PK_Config_Topic_Test_ID");
 
-            entity.ToTable("Config_Topic");
+            entity.ToTable("Config_Topic_Test");
 
             entity.Property(e => e.TopicId)
                 .ValueGeneratedNever()
@@ -195,7 +195,7 @@ public partial class MdhephtContext : DbContext
             entity.Property(e => e.DefaultThemePath)
                 .HasMaxLength(255)
                 .HasColumnName("defaultThemePath");
-            entity.Property(e => e.IsVisible).HasColumnName("isVisible");
+            //entity.Property(e => e.IsVisible).HasColumnName("isVisible");
             entity.Property(e => e.OmitNcdmData).HasColumnName("omitNcdmData");
             entity.Property(e => e.Overview)
                 .HasMaxLength(4000)

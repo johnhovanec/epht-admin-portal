@@ -1,0 +1,105 @@
+﻿@page
+@model epht_admin_portal.Pages.Config.ConfigTopic.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].TopicTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].TopicUrlPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].DefaultThemePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].Overview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].AboutData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].CountySuppressionRuleRange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].CountySuppressionRulePopMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].SubCountySuppressionRuleRange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].SubCountySuppressionRulePopMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].OmitNcdmData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConfigTopic[0].ParentTopic)
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.ConfigTopic[0].IsVisible) *@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ConfigTopic) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicUrlPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefaultThemePath)
+            </td>
+            <td>
+                @(item.Overview?.Length > 30 ? item.Overview.Substring(0, 30) + "..." : item.Overview)
+            </td>
+            <td>
+                @(item.AboutData?.Length > 30 ? item.AboutData.Substring(0, 30) + "..." : item.AboutData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountySuppressionRuleRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountySuppressionRulePopMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCountySuppressionRuleRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCountySuppressionRulePopMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OmitNcdmData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentTopic)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TopicId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TopicId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TopicId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

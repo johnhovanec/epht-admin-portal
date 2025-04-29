@@ -1,0 +1,100 @@
+﻿@page
+@model epht_admin_portal.Pages.Config.ConfigTopic.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ConfigTopic</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.TopicTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.TopicTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.TopicUrlPath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.TopicUrlPath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.DefaultThemePath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.DefaultThemePath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.Overview)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.Overview)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.AboutData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.AboutData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.CountySuppressionRuleRange)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.CountySuppressionRuleRange)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.CountySuppressionRulePopMin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.CountySuppressionRulePopMin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.SubCountySuppressionRuleRange)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.SubCountySuppressionRuleRange)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.SubCountySuppressionRulePopMin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.SubCountySuppressionRulePopMin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.OmitNcdmData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.OmitNcdmData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ConfigTopic.ParentTopic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ConfigTopic.ParentTopic)
+        </dd>
+        @* <dt class="col-sm-2"> *@
+        @*     @Html.DisplayNameFor(model => model.ConfigTopic.IsVisible) *@
+        @* </dt> *@
+        @* <dd class="col-sm-10"> *@
+        @*     @Html.DisplayFor(model => model.ConfigTopic.IsVisible) *@
+        @* </dd> *@
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ConfigTopic.TopicId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

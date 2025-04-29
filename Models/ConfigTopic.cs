@@ -31,5 +31,5 @@ public partial class ConfigTopic
 
     public string? ParentTopic { get; set; }
 
-    public bool? IsVisible { get; set; }
+    //public bool? IsVisible { get; set; }
 }

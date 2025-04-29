@@ -7,18 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using epht_admin_portal.Models;
 
-namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
+namespace epht_admin_portal.Pages.Data.AsthmaNcdmStatewide
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
-        private readonly epht_admin_portal.Models.MdhephtContext _context;
+        private readonly MdhephtContext _context;
 
-        public DeleteModel(epht_admin_portal.Models.MdhephtContext context)
+        public DetailsModel(MdhephtContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public Models.AsthmaNcdmStatewide AsthmaNcdmStatewide { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,7 +28,6 @@ namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
             }
 
             var asthmancdmstatewide = await _context.AsthmaNcdmStatewides.FirstOrDefaultAsync(m => m.AsthmaStatewideId == id);
-
             if (asthmancdmstatewide == null)
             {
                 return NotFound();
@@ -39,24 +37,6 @@ namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
                 AsthmaNcdmStatewide = asthmancdmstatewide;
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var asthmancdmstatewide = await _context.AsthmaNcdmStatewides.FindAsync(id);
-            if (asthmancdmstatewide != null)
-            {
-                AsthmaNcdmStatewide = asthmancdmstatewide;
-                _context.AsthmaNcdmStatewides.Remove(AsthmaNcdmStatewide);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using epht_admin_portal.Models;
 
-namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
+namespace epht_admin_portal.Pages.Data.AsthmaNcdmStatewide
 {
     public class EditModel : PageModel
     {
-        private readonly epht_admin_portal.Models.MdhephtContext _context;
+        private readonly MdhephtContext _context;
 
-        public EditModel(epht_admin_portal.Models.MdhephtContext context)
+        public EditModel(MdhephtContext context)
         {
             _context = context;
         }

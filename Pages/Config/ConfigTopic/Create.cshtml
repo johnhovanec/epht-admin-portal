@@ -1,0 +1,99 @@
+﻿@page
+@model epht_admin_portal.Pages.Config.ConfigTopic.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ConfigTopic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.TopicId" class="control-label"></label>
+                <input asp-for="ConfigTopic.TopicId" class="form-control" />
+                <span asp-validation-for="ConfigTopic.TopicId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.TopicTitle" class="control-label"></label>
+                <input asp-for="ConfigTopic.TopicTitle" class="form-control" />
+                <span asp-validation-for="ConfigTopic.TopicTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.TopicUrlPath" class="control-label"></label>
+                <input asp-for="ConfigTopic.TopicUrlPath" class="form-control" />
+                <span asp-validation-for="ConfigTopic.TopicUrlPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.Category" class="control-label"></label>
+                <input asp-for="ConfigTopic.Category" class="form-control" />
+                <span asp-validation-for="ConfigTopic.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.DefaultThemePath" class="control-label"></label>
+                <input asp-for="ConfigTopic.DefaultThemePath" class="form-control" />
+                <span asp-validation-for="ConfigTopic.DefaultThemePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.Overview" class="control-label"></label>
+                <input asp-for="ConfigTopic.Overview" class="form-control" />
+                <span asp-validation-for="ConfigTopic.Overview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.AboutData" class="control-label"></label>
+                <input asp-for="ConfigTopic.AboutData" class="form-control" />
+                <span asp-validation-for="ConfigTopic.AboutData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.CountySuppressionRuleRange" class="control-label"></label>
+                <input asp-for="ConfigTopic.CountySuppressionRuleRange" class="form-control" />
+                <span asp-validation-for="ConfigTopic.CountySuppressionRuleRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.CountySuppressionRulePopMin" class="control-label"></label>
+                <input asp-for="ConfigTopic.CountySuppressionRulePopMin" class="form-control" />
+                <span asp-validation-for="ConfigTopic.CountySuppressionRulePopMin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.SubCountySuppressionRuleRange" class="control-label"></label>
+                <input asp-for="ConfigTopic.SubCountySuppressionRuleRange" class="form-control" />
+                <span asp-validation-for="ConfigTopic.SubCountySuppressionRuleRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.SubCountySuppressionRulePopMin" class="control-label"></label>
+                <input asp-for="ConfigTopic.SubCountySuppressionRulePopMin" class="form-control" />
+                <span asp-validation-for="ConfigTopic.SubCountySuppressionRulePopMin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.OmitNcdmData" class="control-label"></label>
+                <input asp-for="ConfigTopic.OmitNcdmData" class="form-control" />
+                <span asp-validation-for="ConfigTopic.OmitNcdmData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfigTopic.ParentTopic" class="control-label"></label>
+                <input asp-for="ConfigTopic.ParentTopic" class="form-control" />
+                <span asp-validation-for="ConfigTopic.ParentTopic" class="text-danger"></span>
+            </div>
+            @* <div class="form-group"> *@
+            @*     <label asp-for="ConfigTopic.IsVisible" class="control-label"></label> *@
+            @*     <input asp-for="ConfigTopic.IsVisible" class="form-control" /> *@
+            @*     <span asp-validation-for="ConfigTopic.IsVisible" class="text-danger"></span> *@
+            @* </div> *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

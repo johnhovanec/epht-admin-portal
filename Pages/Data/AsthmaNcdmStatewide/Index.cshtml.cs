@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using epht_admin_portal.Models;
 
-namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
+namespace epht_admin_portal.Pages.Data.AsthmaNcdmStatewide
 {
     public class IndexModel : PageModel
     {
-        private readonly epht_admin_portal.Models.MdhephtContext _context;
+        private readonly MdhephtContext _context;
 
-        public IndexModel(epht_admin_portal.Models.MdhephtContext context)
+        public IndexModel(MdhephtContext context)
         {
             _context = context;
         }

@@ -7,18 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using epht_admin_portal.Models;
 
-namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
+namespace epht_admin_portal.Pages.Config.ConfigTopic
 {
     public class DetailsModel : PageModel
     {
-        private readonly epht_admin_portal.Models.MdhephtContext _context;
+        private readonly MdhephtContext _context;
 
-        public DetailsModel(epht_admin_portal.Models.MdhephtContext context)
+        public DetailsModel(MdhephtContext context)
         {
             _context = context;
         }
 
-        public Models.AsthmaNcdmStatewide AsthmaNcdmStatewide { get; set; } = default!;
+        public Models.ConfigTopic ConfigTopic { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,14 +27,14 @@ namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
                 return NotFound();
             }
 
-            var asthmancdmstatewide = await _context.AsthmaNcdmStatewides.FirstOrDefaultAsync(m => m.AsthmaStatewideId == id);
-            if (asthmancdmstatewide == null)
+            var configtopic = await _context.ConfigTopics.FirstOrDefaultAsync(m => m.TopicId == id);
+            if (configtopic == null)
             {
                 return NotFound();
             }
             else
             {
-                AsthmaNcdmStatewide = asthmancdmstatewide;
+                ConfigTopic = configtopic;
             }
             return Page();
         }

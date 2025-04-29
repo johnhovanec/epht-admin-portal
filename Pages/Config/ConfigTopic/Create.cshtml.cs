@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using epht_admin_portal.Models;
 
-namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
+namespace epht_admin_portal.Pages.Config.ConfigTopic
 {
     public class CreateModel : PageModel
     {
-        private readonly epht_admin_portal.Models.MdhephtContext _context;
+        private readonly MdhephtContext _context;
 
-        public CreateModel(epht_admin_portal.Models.MdhephtContext context)
+        public CreateModel(MdhephtContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
         }
 
         [BindProperty]
-        public Models.AsthmaNcdmStatewide AsthmaNcdmStatewide { get; set; } = default!;
+        public Models.ConfigTopic ConfigTopic { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -34,7 +34,7 @@ namespace epht_admin_portal.Pages.AsthmaNcdmStatewide
                 return Page();
             }
 
-            _context.AsthmaNcdmStatewides.Add(AsthmaNcdmStatewide);
+            _context.ConfigTopics.Add(ConfigTopic);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
